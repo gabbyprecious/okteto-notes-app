@@ -1,0 +1,13 @@
+name: notes-app
+services:
+  notes-app:
+    public: true
+    image: gabbyprecious/notes-app:latest
+    build: .
+    replicas: 1
+    command: python3 manage.py runserver 8000
+    ports:
+      - 8000
+    resources:
+      cpu: 100m
+      memory: 128Mi
